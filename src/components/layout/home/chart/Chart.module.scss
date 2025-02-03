@@ -1,0 +1,58 @@
+.chart {
+	margin-top: var(--section-mt);
+
+	&__title {
+		font-size: clamp(30px, 4vw, 40px);
+		font-weight: 600;
+		line-height: 120%;
+	}
+
+	&__description {
+		&:nth-child(2) {
+			margin-top: 15px;
+
+			font-size: 20px;
+			font-weight: 500;
+			color: #0b8b4e;
+		}
+
+		&:nth-child(3) {
+			margin-top: 16px;
+		}
+	}
+
+	&__image {
+		& img {
+			width: 100%;
+			max-width: 535px;
+			height: auto;
+		}
+	}
+
+	&__button {
+		margin-top: 26px;
+		padding: 20px;
+
+		width: min(100%, 396px);
+		height: 96px;
+	}
+
+	@media (max-width: 900px) {
+		&__container {
+			flex-direction: column-reverse;
+		}
+
+		&__content {
+			width: 100%;
+			text-align: center;
+		}
+
+		&__image {
+			width: 100%;
+		}
+
+		&__button {
+			margin: clamp(26px, 4.6vw, 46px) auto 0;
+		}
+	}
+}

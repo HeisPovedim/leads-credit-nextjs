@@ -1,0 +1,111 @@
+.header {
+	position: relative;
+	margin-top: clamp(15px, 4vw, 40px) !important;
+  margin-bottom: 40px !important;
+
+	&__phone {
+		font-size: 20px;
+		font-weight: 600;
+		text-wrap: nowrap;
+	}
+
+	&__logo {
+		& img {
+			width: clamp(135px, 30vw, 301px);
+		}
+	}
+
+	&__nav {
+		display: none;
+	}
+
+	&__nav.show {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translate(-50%, 0px);
+	}
+
+	@media (max-width: 480px) {
+		&__phone {
+			display: none;
+		}
+
+		&__nav {
+			position: absolute;
+			margin: 0;
+			top: 50px;
+			left: 50%;
+			transform: translate(-50%, -10px);
+			width: 100%;
+			display: flex;
+
+			background-color: #eafcf3;
+			padding: 15px 25px;
+			border-radius: 12px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.3s ease, transform 0.3s ease;
+
+      &-phone {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      &-button {
+        margin-top: 16px;
+      }
+		}
+	}
+}
+
+.burger-checkbox {
+	position: absolute;
+	visibility: hidden;
+}
+.burger {
+	cursor: pointer;
+	display: none;
+	position: relative;
+	border: none;
+	background: transparent;
+	min-width: 33px;
+	height: 22px;
+
+	@media (max-width: 480px) {
+		display: block;
+	}
+}
+.burger::before,
+.burger::after {
+	content: '';
+	left: 0;
+	position: absolute;
+	display: block;
+	min-width: 33px;
+	height: 4px;
+	border-radius: 100px;
+	background: #000000;
+}
+.burger::before {
+	top: 0;
+	box-shadow: 0 9px 0 #000000;
+	transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+}
+.burger::after {
+	bottom: 0;
+	transition: bottom 0.3s 0.15s, transform 0.3s;
+}
+.burger-checkbox:checked + .burger::before {
+	top: 9px;
+	transform: rotate(45deg);
+	box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+	transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+}
+.burger-checkbox:checked + .burger::after {
+	bottom: 9px;
+	transform: rotate(-45deg);
+	transition: bottom 0.3s, transform 0.3s 0.15s;
+}

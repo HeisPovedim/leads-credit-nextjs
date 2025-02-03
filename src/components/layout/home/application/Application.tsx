@@ -1,0 +1,123 @@
+'use client';
+import { useForm } from 'react-hook-form';
+
+// INPUTS
+import InputEmail from '@/components/inputs/input-email/InputEmail';
+import InputNumberPhone from '@/components/inputs/input-phone/InputPhone';
+import InputText from '@/components/inputs/input-text/InputText';
+
+// UI
+import Button from '@/components/ui/button/Button';
+
+// STYLES
+import style from './Application.module.scss';
+
+interface IFormInputs {
+	fio: string;
+	phone: string;
+	email: string;
+	description: string;
+	agreement: boolean;
+}
+
+export default function Application() {
+	const {
+		control,
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<IFormInputs>();
+
+	const onSubmit = (data: IFormInputs) => {
+		console.log(data);
+	};
+
+	return (
+		<section className={`${style['application']}`}>
+			<div className={`${style['application__wrapper']} container`}>
+				<h2 className={`${style['application__title']} flex flex-col items-center`}>Оставить заявку</h2>
+				<form onSubmit={handleSubmit(onSubmit)} className={`${style['application__form']} flex flex-col items-center`}>
+					<InputText<IFormInputs>
+						type='text'
+						customClassName={{
+							error: style['application-modal__error'],
+						}}
+						placeholder='ФИО'
+						controller={{
+							control: control,
+							name: 'fio',
+							error: errors,
+						}}
+						handlers={{
+							onChange: () => {},
+						}}
+					/>
+
+					<InputNumberPhone<IFormInputs>
+						customClassName={{
+							error: style['application-modal__error'],
+						}}
+						placeholder='Номер телефона'
+						value=''
+						controller={{
+							control: control,
+							name: 'phone',
+							error: errors,
+						}}
+						handlers={{
+							onChange: () => {},
+						}}
+					/>
+
+					<InputEmail<IFormInputs>
+						id='email'
+						placeholder='Электронная почта'
+						customClassName={{
+							error: style['application-modal__error'],
+						}}
+						controller={{
+							control: control,
+							name: 'email',
+							error: errors,
+						}}
+					/>
+
+					<InputText<IFormInputs>
+						type='description'
+						customClassName={{
+							error: style['application-modal__error'],
+						}}
+						placeholder='Опишите задачу'
+						controller={{
+							control: control,
+							name: 'description',
+							error: errors,
+						}}
+						handlers={{
+							onChange: () => {},
+						}}
+					/>
+					<div className={`${style['application__form-resume']} flex items-center justify-between gap-[34px]`}>
+						<div className={`${style['application__submit-wrapper']}`}>
+							<Button type='submit' variant='green-oval' className={style['application__submit']}>
+								Отправить заявку
+							</Button>
+							{errors.agreement && <p className={style['application__submit-error']}>{errors.agreement.message}</p>}
+						</div>
+						<div className={style['application__checkbox-wrapper']}>
+							<input
+								type='checkbox'
+								id='agreement'
+								className={style['application__checkbox']}
+								{...register('agreement', { required: '*Необходимо согласие' })}
+							/>
+							<label htmlFor='agreement' className={style['application__checkbox-label']}>
+								Я согласен на обработку <br className='hidden' /> персональных данных
+							</label>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	);
+}

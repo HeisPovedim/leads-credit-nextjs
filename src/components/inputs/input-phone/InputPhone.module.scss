@@ -1,0 +1,17 @@
+.input-phone {
+	position: relative;
+	width: 100%;
+
+	& input {
+		width: 100%;
+	}
+}
+
+.error {
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	color: #ff4444;
+	font-size: 12px;
+	margin: 0;
+}

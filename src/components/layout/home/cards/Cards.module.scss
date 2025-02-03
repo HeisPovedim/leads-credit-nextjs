@@ -1,0 +1,25 @@
+.cards {
+	margin-top: var(--section-mt);
+
+	&__item {
+		padding: clamp(50px, 6vw, 60px) clamp(26px, 3vw, 30px) clamp(36px, 4.3vw, 43px);
+		width: min(100%, 385px);
+
+		border: 2.12px solid;
+		background: url('./img/line.png') no-repeat top clamp(33px, 4vw, 40px) left clamp(26px, 3vw, 30px);
+		background-color: #ffffff;
+		border-radius: 28px 28px 0px 28px;
+		border-image-source: linear-gradient(108.87deg, rgba(255, 255, 255, 0.8) 0.66%, rgba(211, 211, 211, 0.1) 99.48%);
+		box-shadow: 5px 8px 10px 0px #c1e7d580;
+
+		&-title {
+			font-size: 22px;
+			font-weight: 700;
+		}
+
+		&-description {
+			margin-top: 18px;
+			font-size: 15px;
+		}
+	}
+}

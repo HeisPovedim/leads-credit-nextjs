@@ -1,0 +1,32 @@
+.advantages {
+	margin-top: var(--section-mt);
+
+	&__title {
+		font-size: clamp(30px, 4vw, 40px);
+		font-weight: 600;
+		text-align: center;
+		line-height: 120%;
+	}
+
+	&__items {
+		margin-top: clamp(40px, 5.8vw, 58px);
+	}
+
+	&__item {
+		width: min(100%, 385px);
+		padding: clamp(20px, 3.2vw, 32px);
+
+		background-color: #ffffff;
+		border-radius: 30px;
+
+		&-title {
+			margin-top: 20px;
+
+			font-weight: 500;
+		}
+
+		&__description {
+			margin-top: 10px;
+		}
+	}
+}

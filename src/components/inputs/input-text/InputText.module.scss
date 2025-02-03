@@ -1,0 +1,25 @@
+.input-text {
+	position: relative;
+	width: 100%;
+
+	& input {
+		width: 100%;
+	}
+
+	.textarea {
+		height: 128px;
+		resize: none;
+		padding: 16px;
+		font-family: inherit;
+		line-height: 1.5;
+	}
+}
+
+.error {
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	color: #ff4444;
+	font-size: 12px;
+	margin: 0;
+}

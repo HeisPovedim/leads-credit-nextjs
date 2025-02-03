@@ -1,0 +1,43 @@
+// TAILWIND
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// RESET
+@import './reset.scss';
+
+// GLOBAL
+* {
+	--section-mt: clamp(60px, 14vw, 140px);
+}
+
+html,
+body {
+	height: 100%;
+	min-height: 100vh;
+	scroll-behavior: smooth;
+
+	// font
+	font-family: 'Montserrat', serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+body {
+	margin: 0 20px;
+	background: url('../../../public/ellipse.png') no-repeat top right;
+}
+
+.container {
+	width: min(100%, 1200px);
+	margin: 0 auto;
+}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: block;
+}
