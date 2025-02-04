@@ -33,7 +33,7 @@ export default function Application() {
 	};
 
 	return (
-		<section className={`${style['application']}`}>
+		<section id='application' className={`${style['application']}`}>
 			<div className={`${style['application__wrapper']} container`}>
 				<h2 className={`${style['application__title']} flex flex-col items-center`}>Оставить заявку</h2>
 				<form onSubmit={handleSubmit(onSubmit)} className={`${style['application__form']} flex flex-col items-center`}>

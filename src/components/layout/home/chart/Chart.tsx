@@ -1,5 +1,6 @@
-import Image from 'next/image';
 
+import Image from 'next/image';
+import Link from 'next/link';
 // COMPONENTS
 import Button from '@/components/ui/button/Button';
 
@@ -24,10 +25,13 @@ export default function Chart() {
 					<p className={`${style['chart__description']}`}>
 						Мы предлагаем высокоэффективное решение для бизнеса, которое помогает не просто привлекать трафик, а привлекать подробнее...
 					</p>
-					<Button className={`${style['chart__button']}`} variant='aqua-oval'>
-						Оставить заявку
-					</Button>
+					<Link href='#application'>
+						<Button className={`${style['chart__button']}`} variant='aqua-oval'>
+							Оставить заявку
+						</Button>
+					</Link>
 				</div>
+
 			</div>
 		</section>
 	);

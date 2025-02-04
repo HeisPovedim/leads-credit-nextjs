@@ -48,11 +48,16 @@ export default function InputText<T extends FieldValues>(props: IInputText<T>) {
 			control={props.controller.control}
 			name={props.controller.name}
 			rules={validationRules[props.type || 'text']}
-			render={({ field }) => (
+			render={({ field: { onChange, value, ...field } }) => (
 				<div className={style['input-text']}>
 					{props.type === 'description' ? (
 						<textarea
 							{...field}
+							value={value || ''}
+							onChange={e => {
+								onChange(e.target.value);
+								props.handlers.onChange(e.target.value);
+							}}
 							id={props.id}
 							name={props.name}
 							className={`custom-input ${style['textarea']} ${props.customClassName}`}
@@ -62,6 +67,11 @@ export default function InputText<T extends FieldValues>(props: IInputText<T>) {
 					) : (
 						<input
 							{...field}
+							value={value || ''}
+							onChange={e => {
+								onChange(e.target.value);
+								props.handlers.onChange(e.target.value);
+							}}
 							id={props.id}
 							name={props.name}
 							className={`custom-input ${props.customClassName}`}

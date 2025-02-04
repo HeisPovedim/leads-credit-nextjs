@@ -17,6 +17,13 @@
 
 	&__nav {
 		display: none;
+
+		&-button {
+			padding: 10px;
+			height: 67px;
+			width: 100%;
+		}
+
 	}
 
 	&__nav.show {

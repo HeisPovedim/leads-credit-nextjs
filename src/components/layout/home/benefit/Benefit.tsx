@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
+
 
 // UI
 import Button from '@/components/ui/button/Button';
@@ -48,9 +50,12 @@ export default function Benefit() {
 							</li>
 						))}
 					</ul>
-					<Button className={`${style['benefit__button']}`} variant='aqua-oval'>
-						Оставить заявку
-					</Button>
+					<Link href='#application'>
+						<Button className={`${style['benefit__button']}`} variant='aqua-oval'>
+							Оставить заявку
+						</Button>
+					</Link>
+
 				</div>
 				<div className={`${style['benefit__image']} flex justify-end w-2/3`}>
 					<Image src={isMobile ? benefitImgMobile : benefitImg} alt='benefit' />

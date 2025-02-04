@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 // COMPONENTS
@@ -39,9 +40,11 @@ export default function Cover() {
 						Мы предлагаем высокоэффективное решение для бизнеса, которое помогает не просто привлекать трафик, а привлекать готовых к
 						покупке клиентов.
 					</p>
-					<Button className={`${style['cover__button']}`} variant='aqua-oval'>
-						Оставить заявку
-					</Button>
+					<Link href='#application'>
+						<Button className={`${style['cover__button']}`} variant='aqua-oval'>
+							Оставить заявку
+						</Button>
+					</Link>
 				</div>
 				<div className={`${style['cover__image']} flex justify-center w-1/2`}>
 					<Image src={isMobile ? coverImgMobile : coverImg} alt='cover' />
