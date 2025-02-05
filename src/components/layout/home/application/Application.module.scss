@@ -3,6 +3,7 @@
 
 	&__wrapper {
 		width: min(100%, 887px);
+		margin: 0 auto;
 		padding: clamp(25px, 5vw, 50px) 20px clamp(35px, 7vw, 70px);
 
 		background-color: #c1f9df;
@@ -136,7 +137,7 @@
 
 		&-error {
 			position: absolute;
-			bottom: -20px;
+			top: 100%;
 			color: #ff4d4f;
 			font-size: 12px;
 		}
@@ -144,9 +145,29 @@
 
 	&-modal {
 		&__error {
-			top: 102%;
+			top: 100%;
 			width: 100%;
 			text-align: center;
+		}
+	}
+
+	&__success {
+		text-align: center;
+		padding: 40px;
+		max-width: 600px;
+		margin: 0 auto;
+
+		&-title {
+			font-size: 24px;
+			font-weight: 600;
+			color: #17b66b;
+			margin-bottom: 16px;
+			
+		}
+
+		&-text {
+			font-size: 18px;
+			color: #666;
 		}
 	}
 

@@ -1,10 +1,10 @@
+// RESET
+@use './reset.scss';
+
 // TAILWIND
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-// RESET
-@import './reset.scss';
 
 // GLOBAL
 * {
@@ -13,11 +13,10 @@
 
 html,
 body {
-	height: 100%;
 	min-height: 100vh;
 	scroll-behavior: smooth;
 
-	// font
+	// FONT
 	font-family: 'Montserrat', serif;
 	font-optical-sizing: auto;
 	font-weight: 400;
@@ -25,13 +24,13 @@ body {
 }
 
 body {
-	margin: 0 20px;
-	background: url('../../../public/ellipse.png') no-repeat top right;
+	background: url('../../../public/ellipse.png') no-repeat top right, url('../../../public/ellipse-oval.png') no-repeat center center, url('../../../public/ellipse-oval.png') no-repeat bottom -60% left 40%;
 }
 
 .container {
-	width: min(100%, 1200px);
+	width: min(100%, 1220px);
 	margin: 0 auto;
+	padding: 0 20px;
 }
 
 .hidden {

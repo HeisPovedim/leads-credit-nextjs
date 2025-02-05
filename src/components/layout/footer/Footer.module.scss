@@ -1,8 +1,8 @@
 .footer {
-	z-index: 1;
 	position: relative;
-	margin-top: clamp(34px, 6.8vw, 68px) !important;
-	margin-bottom: clamp(80px, 12vw, 100px) !important;
+	padding-top: clamp(34px, 6.8vw, 68px) !important;
+	padding-bottom: clamp(50px, 10vw, 100px) !important;
+	background-color: #fff;
 
 	&__phone {
 		font-size: 20px;

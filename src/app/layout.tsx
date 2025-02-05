@@ -17,6 +17,9 @@ export const metadata: Metadata = {
 	title: 'leads.credit',
 	description:
 		'Мы предлагаем высокоэффективное решение для бизнеса, которое помогает не просто привлекать трафик, а привлекать готовых к покупке клиентов.',
+	icons: {
+		icon: '/favicon.png',
+	},
 };
 
 export default function RootLayout({
