@@ -37,6 +37,23 @@
 		height: 96px;
 	}
 
+	&__text {
+		line-height: 1.5;
+	}
+
+	&__more-btn {
+		display: inline;
+		border: none;
+		background: none;
+		cursor: pointer;
+		font-weight: 500;
+		transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
 	@media (max-width: 900px) {
 		&__container {
 			flex-direction: column-reverse;

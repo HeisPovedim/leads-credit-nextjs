@@ -1,6 +1,8 @@
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 // COMPONENTS
 import Button from '@/components/ui/button/Button';
 
@@ -10,8 +12,12 @@ import style from './Chart.module.scss';
 // ASSETS
 import chartImg from './img/chart.png';
 
-
 export default function Chart() {
+	const [isExpanded, setIsExpanded] = useState(false);
+
+	const shortText = 'Мы предлагаем высокоэффективное решение для бизнеса, которое помогает не просто привлекать трафик, а привлекать';
+	const fullText =
+		'Мы предлагаем высокоэффективное решение для бизнеса, которое помогает не просто привлекать трафик, а привлекать целевых клиентов, готовых к покупке. Наш подход основан на глубоком анализе рынка и потребностей вашей аудитории.';
 
 	return (
 		<section className={`${style['chart']} container`}>
@@ -22,8 +28,11 @@ export default function Chart() {
 				<div className={`${style['chart__content']} w-1/2`}>
 					<h1 className={`${style['chart__title']}`}>Привлечение качественных клиентов</h1>
 					<p className={`${style['chart__description']}`}>С максимальной отдачей</p>
-					<p className={`${style['chart__description']}`}>
-						Мы предлагаем высокоэффективное решение для бизнеса, которое помогает не просто привлекать трафик, а привлекать подробнее...
+					<p className={`${style['chart__text']}`}>
+						{isExpanded ? fullText : shortText}
+						<button onClick={() => setIsExpanded(!isExpanded)} className={style['chart__more-btn']}>
+							{isExpanded ? '' : ' подробнее...'}
+						</button>
 					</p>
 					<Link href='#application'>
 						<Button className={`${style['chart__button']}`} variant='aqua-oval'>
@@ -31,7 +40,6 @@ export default function Chart() {
 						</Button>
 					</Link>
 				</div>
-
 			</div>
 		</section>
 	);

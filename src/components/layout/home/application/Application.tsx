@@ -74,8 +74,8 @@ export default function Application() {
 	};
 
 	return (
-		<section id='application' className={`${style['application']} container`}>
-			<div className={`${style['application__wrapper']}`}>
+		<section id='application' className={`${style['application']}`}>
+			<div className={`${style['application__wrapper']} container`}>
 				<h2 className={`${style['application__title']} flex flex-col items-center`}>Оставить заявку</h2>
 				{isSubmitted ? (
 					<div className={style['application__success']}>

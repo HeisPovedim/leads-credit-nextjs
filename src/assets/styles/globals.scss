@@ -13,6 +13,7 @@
 
 html,
 body {
+	// background-color: #000;
 	min-height: 100vh;
 	scroll-behavior: smooth;
 
@@ -24,7 +25,9 @@ body {
 }
 
 body {
-	background: url('../../../public/ellipse.png') no-repeat top right, url('../../../public/ellipse-oval.png') no-repeat center center, url('../../../public/ellipse-oval.png') no-repeat bottom -60% left 40%;
+	background: url('../../../public/ellipse.png') no-repeat top right, url('../../../public/ellipse-oval.png') no-repeat 
+	center center, url('../../../public/ellipse-circle.png') no-repeat bottom -20% right, url('../../../public/ellipse-oval-blue.png') no-repeat bottom left 40%;
+	background-size: contain;
 }
 
 .container {
