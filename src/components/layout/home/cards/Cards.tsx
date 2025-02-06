@@ -4,7 +4,7 @@ export default function Cards() {
 	return (
 		<section className={`${style['cards']} container`}>
 			<div className={`${style['cards__container']}`}>
-				<div className={`${style['cards__items']} flex flex-wrap justify-center gap-[17px]`}>
+				<div className={`${style['cards__items']} flex items-center justify-center gap-[17px]`}>
 					<div className={`${style['cards__item']}`}>
 						<h3 className={`${style['cards__item-title']}`}>Аналитика и отчетность</h3>
 						<p className={`${style['cards__item-description']}`}>Можно отслеживать эффективность каждого канала</p>

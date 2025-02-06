@@ -22,4 +22,16 @@
 			font-size: 15px;
 		}
 	}
+
+	@media (max-width: 1200px) {
+		&__items {
+			flex-wrap: wrap;
+		}
+	}
+
+	@media (max-width: 900px) {
+		&__items {
+			flex-direction: column;
+		}
+	}
 }

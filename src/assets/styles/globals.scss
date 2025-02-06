@@ -26,14 +26,14 @@ body {
 
 body {
 	background: url('../../../public/ellipse.png') no-repeat top right, url('../../../public/ellipse-oval.png') no-repeat 
-	center center, url('../../../public/ellipse-circle.png') no-repeat bottom -20% right, url('../../../public/ellipse-oval-blue.png') no-repeat bottom left 40%;
+	top clamp(40%, 4vw, 30%) center, url('../../../public/ellipse-circle.png') no-repeat bottom clamp(20%, 0.5vw, 5%) center, url('../../../public/ellipse-oval-blue.png') no-repeat bottom left 40%;
 	background-size: contain;
 }
 
 .container {
 	width: min(100%, 1220px);
 	margin: 0 auto;
-	padding: 0 20px;
+	padding: 0 clamp(10px, 2vw, 20px);
 }
 
 .hidden {

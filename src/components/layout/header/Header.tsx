@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 // COMPONENTS
@@ -26,8 +27,13 @@ export default function Header() {
 			<label className={style['burger']} htmlFor='burger-checkbox'></label>
 			<nav className={`${style['header__nav']} ${isMenuOpen ? style.show : ''} flex-col items-center justify-center`}>
 				<p className={`${style['header__nav-phone']}`}>8-916-686-47-02</p>
-				<Button className={`${style['header__nav-button']}`} variant='aqua-oval'>Оставить заявку</Button>
+				<Link href='#application'>
+					<Button className={`${style['header__nav-button']}`} variant='aqua-oval'>
+						Оставить заявку
+					</Button>
+				</Link>
 			</nav>
 		</header>
+
 	);
 }

@@ -12,7 +12,7 @@ export default function Advantages() {
 	return (
 		<section className={`${style['advantages']} container`}>
 			<h2 className={`${style['advantages__title']}`}>Платформу для автоматизации включает в себя:</h2>
-			<div className={`${style['advantages__items']} flex justify-center flex-wrap gap-[20px]`}>
+			<div className={`${style['advantages__items']} flex justify-center items-center gap-[20px]`}>
 				<div className={`${style['advantages__item']}`}>
 					<Image src={adv_1} alt='adv_1' />
 					<h3 className={`${style['advantages__item-title']}`}>Автоматический сбор лидов</h3>
