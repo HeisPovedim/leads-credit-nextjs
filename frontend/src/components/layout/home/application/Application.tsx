@@ -46,13 +46,13 @@ export default function Application() {
 				fio: data.fio,
 				phone_number: data.phone.replace(/\D/g, ''),
 				email: data.email,
-				text: data.description,
+				description: data.description,
 				consent: data.agreement,
 			};
 
 			console.log(requestData);
 
-			const response = await fetch('https://leads.credit/v1/api/u/reg', {
+			const response = await fetch('http://localhost:8000/form/add', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

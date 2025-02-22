@@ -10,7 +10,6 @@ export default function Footer() {
 				<div className={`${style['footer__logo']}`}>
 					<Image src='/logo.png' width={304} height={62} alt='logo' />
 				</div>
-
 				<p className={`${style['footer__phone']}`}>8-916-686-47-02</p>
 			</div>
 		</footer>

@@ -1,16 +1,31 @@
-from fastapi import FastAPI, Depends
-from sqlalchemy.orm import Session
-from app.tabels.form.models import Form
-from app.database import async_session_maker
-from app.services.form_service import FormService
+import uvicorn
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
+from core.config import settings
+
+# Роутеры
+from api.form.route import router as form_router
+
+# Создаем экземпляр FastAPI
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"message": "Hello, World!"}
+# Настройка CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-@app.post("/form")
-def create_form(form: Form, db: Session = Depends(async_session_maker)):
-    form_service = FormService(db)
-    return form_service.create_form(form)
+# Добавляем роутеры
+app.include_router(form_router)
+
+if __name__ == "__main__":
+    uvicorn.run(
+        "main:main_app",
+        host=settings.run.host,
+        port=settings.run.port,
+        reload=True,
+    )
