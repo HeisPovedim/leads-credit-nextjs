@@ -12,8 +12,12 @@ sys.path.insert(0, dirname(dirname(abspath(__file__))))
 
 from core.config import settings
 from core.models.database import Base
-from api.form.model import Form
 
+# Модели
+from api.form.model import Form
+from api.users.model import User
+
+# Конфигурация
 config = context.config
 config.set_main_option("sqlalchemy.url", str(settings.db.url))
 if config.config_file_name is not None:
